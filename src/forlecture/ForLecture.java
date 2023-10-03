@@ -5,6 +5,8 @@
  */
 package forlecture;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author PHOTON
@@ -17,32 +19,20 @@ public class ForLecture {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        System.out.println(VisionPerson.getNoOfPersons());
-        
-        VisionPerson zhongli = new VisionPerson("Zhongli");
-        double zhonglimoney = zhongli.getMoney();
-        System.out.println(zhonglimoney);
-        zhongli.earnMoney(1000000);
-        zhonglimoney = zhongli.getMoney();
-        System.out.println(zhonglimoney);
-        
-        System.out.println(VisionPerson.getNoOfPersons());
-        
-        VisionPerson venti = new VisionPerson("Venti", 1066, 5060532);
-        venti.introduce();
-        
-        int ventiage = venti.getAge();
-        System.out.println(ventiage);
-        venti.birthday();
-        ventiage = venti.getAge();
-        System.out.println(ventiage);
-        
-        venti.setFriend(zhongli);
-        System.out.println(venti.getName() + " is now friends with " + venti.getFriend().getName());
-        
-        zhongli.introduce(venti);
-        
-        System.out.println(VisionPerson.getNoOfPersons());
+        int[] numList = {1,2,3,4,5};
+        String[] stringList = new String[5];
+        stringList[0] = "Hello";
+        stringList[1] = "Hi";
+        stringList[2] = "GOT YA NOW, KIRYU-CHAN!!!!!!";
+        stringList[3] = "Hola";
+        stringList[4] = "Mabuhay";
+        char[][] charGrid = new char[2][2];
+
+        new VisionPerson("Neuvillette",32,129029092);
+        new VisionPerson("Wriothesley",45,4546353);
+        System.out.println(VisionPerson.getPerson(0));
+        System.out.println(VisionPerson.getPerson("Wriothesley").getName());
+        System.out.println(VisionPerson.getPerson("Wriothesley").getAge());
     }
 
 }
