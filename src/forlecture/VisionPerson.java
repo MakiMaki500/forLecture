@@ -5,6 +5,8 @@
  */
 package forlecture;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author PHOTON
@@ -15,6 +17,7 @@ public class VisionPerson {
     private double money;
     private VisionPerson Friend;
     private static int noOfPersons = 0;
+    private static ArrayList<VisionPerson> personList = new ArrayList();
     
     public VisionPerson(String name){
         this.name = name;
@@ -28,6 +31,7 @@ public class VisionPerson {
         this.age = age;
         this.money = money;
         noOfPersons++;
+        personList.add(this);
     }
     
     public double getMoney(){
@@ -82,5 +86,19 @@ public class VisionPerson {
     
     public static int getNoOfPersons(){
         return noOfPersons;
+    }
+    public static VisionPerson getPerson(int index){
+        return personList.get(index);
+    }
+    public static VisionPerson getPerson(String name){
+       boolean found = false;
+       for(VisionPerson p : personList) {
+           if(p.name.equals(name)){
+               found = true;
+               return p;
+           }
+       }
+       if(!found) System.out.printf("No person named %s.\n", name);
+       return null;
     }
 }
