@@ -12,10 +12,10 @@ import java.util.ArrayList;
  * @author PHOTON
  */
 public class VisionPerson {
-    private String name;
-    private int age;
-    private double money;
-    private VisionPerson Friend;
+    protected String name;
+    protected int age;
+    protected double money;
+    protected VisionPerson Friend;
     private static int noOfPersons = 0;
     private static ArrayList<VisionPerson> personList = new ArrayList();
     
