@@ -20,9 +20,6 @@ public class VisionArchon extends VisionPerson {
         this.element=element;
         this.worshipPower=worshipPower;
     }
-    public String getName(){
-        return this.name;
-    }
     public void getWorshipped(){
         this.worshipPower+=10;
     }
