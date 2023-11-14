@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author PHOTON
  */
-public class VisionPerson {
+public abstract class VisionPerson {
     protected String name;
     protected int age;
     protected double money;
