@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author PHOTON
  */
-public abstract class VisionPerson {
+public class VisionPerson {
     protected String name;
     protected int age;
     protected double money;
@@ -91,14 +91,22 @@ public abstract class VisionPerson {
         return personList.get(index);
     }
     public static VisionPerson getPerson(String name){
-       boolean found = false;
        for(VisionPerson p : personList) {
            if(p.name.equals(name)){
-               found = true;
                return p;
            }
        }
-       if(!found) System.out.printf("No person named %s.\n", name);
-       return null;
+       throw new IllegalArgumentException();
+    }
+    
+    public static VisionPerson getVisionPerson(int index){
+        try{
+            VisionPerson p = personList.get(index);
+            return p;
+        }
+        catch(IndexOutOfBoundsException e){
+            System.out.println("Index out of bounds");
+        }
+        return personList.get(index);
     }
 }

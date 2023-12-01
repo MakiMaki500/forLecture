@@ -18,6 +18,13 @@ public class ForLecture {
      */
     public static void main(String[] args) {
 
-        VisionArchon venti = new VisionArchon("Venti", "Mondstadt", "Anemo", 80.0);
+        VisionArchon barbatos = new VisionArchon("Venti", "Mondstadt", "Anemo", 80.0);
+        VisionArchon focalors = new VisionArchon("Furina", "Fontaine", "Hydro", 100.0);
+        try{
+        VisionPerson lyney = VisionPerson.getPerson("Lyney");
+        }
+        catch(IllegalArgumentException e){
+            System.out.println("Person does not exist");
+        }
     }
 }
