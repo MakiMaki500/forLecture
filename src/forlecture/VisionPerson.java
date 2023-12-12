@@ -76,6 +76,16 @@ public class VisionPerson {
     public VisionPerson getFriend() {
         return Friend;
     }
+    
+    public void borrowMoney(VisionPerson lender, double amount) throws NotEnoughMoneyException{
+        if(lender.money >= amount){
+            this.money += amount;
+            lender.money -= amount;
+        }
+        else{
+            throw new NotEnoughMoneyException(lender, amount-lender.money);
+        }
+    }
 
     /**
      * @param Friend the Friend to set

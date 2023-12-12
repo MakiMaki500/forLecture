@@ -20,11 +20,21 @@ public class ForLecture {
 
         VisionArchon barbatos = new VisionArchon("Venti", "Mondstadt", "Anemo", 80.0);
         VisionArchon focalors = new VisionArchon("Furina", "Fontaine", "Hydro", 100.0);
+        VisionPerson lyney = null;
+        VisionPerson lynette = null;
         try{
-        VisionPerson lyney = VisionPerson.getPerson("Lyney");
+        lyney = VisionPerson.getPerson("Lyney");
+        lynette = VisionPerson.getPerson("Lynette");
+        lyney.borrowMoney(lynette,10000);
         }
         catch(IllegalArgumentException e){
             System.out.println("Person does not exist");
+        } 
+        catch (NotEnoughMoneyException ex){
+            lyney.earnMoney(ex.setToZero());
+        }
+        catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
