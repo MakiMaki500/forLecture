@@ -14,7 +14,7 @@ public class VisionArchon extends VisionPerson {
     private double worshipPower;
     
     
-    public VisionArchon(String name, String nation, String element, Double worshipPower){
+    public VisionArchon(String name, String nation, String element, double worshipPower){
         super(name);
         this.nation=nation;
         this.element=element;
